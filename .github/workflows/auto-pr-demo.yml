@@ -1,4 +1,4 @@
-name: Demo1 to create automatic PR
+name: Demo2 to create automatic PR
 
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           branch: "auto-pr-branch"
-          base: release-041122
+          base: release-110422
           title: "demo for auto pr and merge"
           committer: ${{ env.GIT_COMMIT_AUTHOR_NAME }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}">
           author: ${{ env.GIT_COMMIT_AUTHOR_NAME }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}">
