@@ -1,4 +1,4 @@
-name: Demo4 to create automatic PR
+name: Demo5 to create automatic PR
 
 on:
   push:
@@ -32,13 +32,13 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Approve Pull Request
-        uses: juliangruber/approve-pull-request-action@v1
+        uses: juliangruber/approve-pull-request-action@v1.1.1
         with:
           github-token: ${{ secrets.AUTO_APPROVER }}
           number: ${{ steps.demo-1.outputs.pull-request-number }}
 
       - name: Merge Pull request
-        uses: juliangruber/merge-pull-request-action@v1
+        uses: juliangruber/merge-pull-request-action@v1.1.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           number: ${{ steps.demo-1.outputs.pull-request-number }}
