@@ -1,14 +1,12 @@
-name: APPROVE
-
-on: pull_request # run on pull request events
+name: Auto approve
+on: pull_request
 
 jobs:
- approve:
-   runs-on: ubuntu-latest
-   permissions:
-    pull-requests: write # grant write permission on the pull-requests endpoint
-   steps:
-     - name: Approve pull request
-       uses: juliangruber/approve-pull-request-action@v1
-       with:
-         github-token: ${{ secrets.GITHUB_TOKEN }}
+  auto-approve:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+    - uses: hmarr/auto-approve-action@v2
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
