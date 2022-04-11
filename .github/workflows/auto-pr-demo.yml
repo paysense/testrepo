@@ -16,7 +16,7 @@ jobs:
         uses: rlespinasse/git-commit-data-action@v1.x
 
       - name: print author name
-        run: echo ${{ env.GIT_COMMIT_AUTHOR_NAME }}
+        run: echo ${{ env.GIT_COMMIT_AUTHOR_NAME }} > AUTHOR1
 
       - name: Raise PR
         id: demo-1
